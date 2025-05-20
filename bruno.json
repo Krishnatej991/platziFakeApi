@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "Platzi Fake API Testing",
+  "name": "Categories",
   "type": "collection",
   "ignore": [
     "node_modules",
