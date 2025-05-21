@@ -1,0 +1,22 @@
+meta {
+  name: CreateACategory
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://api.escuelajs.co/api/v1/categories/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "New Cat egory",
+    "image": "https://placeimg.com/640/480/any"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("Category_id", res.body.Categoryid);
+}
