@@ -1,0 +1,25 @@
+meta {
+  name: CreateProduct
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://api.escuelajs.co/api/v1/products/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "New Product",
+    "price": 10,
+    "description": "A description",
+    "categoryId": 1,
+    "images": ["https://placehold.co/600x400"]
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("Category_id", res.body.Categoryid);
+}
