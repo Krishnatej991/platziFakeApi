@@ -1,0 +1,15 @@
+meta {
+  name: FilterByCategory
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/products/?categoryId=1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  categoryId: 1
+}

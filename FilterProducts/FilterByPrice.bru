@@ -1,0 +1,15 @@
+meta {
+  name: FilterByPrice
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/products/?price=100
+  body: none
+  auth: inherit
+}
+
+params:query {
+  price: 100
+}

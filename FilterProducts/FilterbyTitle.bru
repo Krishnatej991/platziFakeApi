@@ -1,0 +1,15 @@
+meta {
+  name: FilterbyTitle
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/products/?title=Generic
+  body: none
+  auth: inherit
+}
+
+params:query {
+  title: Generic
+}

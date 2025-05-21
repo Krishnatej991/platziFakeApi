@@ -1,0 +1,15 @@
+meta {
+  name: GetLocationWithLimit
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/locations?size=10
+  body: none
+  auth: inherit
+}
+
+params:query {
+  size: 10
+}

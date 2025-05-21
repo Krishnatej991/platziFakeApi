@@ -1,0 +1,18 @@
+meta {
+  name: PRWithPagination
+  type: http
+  seq: 10
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/products/?price_min=100&price_max=1000&limit=10&offset=10
+  body: none
+  auth: inherit
+}
+
+params:query {
+  price_min: 100
+  price_max: 1000
+  limit: 10
+  offset: 10
+}

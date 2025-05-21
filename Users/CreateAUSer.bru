@@ -1,0 +1,24 @@
+meta {
+  name: CreateAUSer
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://api.escuelajs.co/api/v1/users/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Nicolas",
+    "email": "nico@gmail.com",
+    "password": "1234",
+    "avatar": "https://picsum.photos/800"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("User_id", res.body.Userid);
+}

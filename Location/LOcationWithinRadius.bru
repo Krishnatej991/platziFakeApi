@@ -1,0 +1,16 @@
+meta {
+  name: LOcationWithinRadius
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321&radius=10
+  body: none
+  auth: inherit
+}
+
+params:query {
+  origin: 6.2071641,-75.5720321
+  radius: 10
+}

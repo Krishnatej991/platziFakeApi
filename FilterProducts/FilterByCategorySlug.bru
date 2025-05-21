@@ -1,0 +1,15 @@
+meta {
+  name: FilterByCategorySlug
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/products/?categorySlug=clothes
+  body: none
+  auth: inherit
+}
+
+params:query {
+  categorySlug: clothes
+}

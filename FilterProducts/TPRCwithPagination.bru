@@ -1,0 +1,19 @@
+meta {
+  name: TPRCwithPagination
+  type: http
+  seq: 9
+}
+
+get {
+  url: https://api.escuelajs.co/api/v1/products/?price_min=900&price_max=1000&categoryId=1&limit=10&offset=10
+  body: none
+  auth: inherit
+}
+
+params:query {
+  price_min: 900
+  price_max: 1000
+  categoryId: 1
+  limit: 10
+  offset: 10
+}
