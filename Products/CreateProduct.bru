@@ -6,16 +6,26 @@ meta {
 
 post {
   url: https://api.escuelajs.co/api/v1/products/
-  body: none
-  auth: inherit
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "New Product121",
+    "price": 2,
+    "description": "A description",
+    "categoryId": 2,
+    "images": ["https://placehold.co/600x400"]
+  }
 }
 
 vars:pre-request {
-  title: New Product
-  price: 10
-  description: A description
-  categoryid: 2
-  images: https://placehold.co/600x400
+  ~title: New Product121
+  ~price: 2
+  ~description: A description
+  ~categoryid: 2
+  ~images: https://placehold.co/600x400
 }
 
 vars:post-response {
@@ -24,15 +34,16 @@ vars:post-response {
 
 script:pre-request {
   req.setBody({
-    "title": "{{title}}",
+    "title": "{{title12}}",
     "price":"2",
     "description" : "{{description}}",
-    "categoryId" : "2",
+    "categoryId" :"2",
     "images" :["https://placehold.co/600x400"]
   });
+  
   
 }
 
 script:post-response {
-  bru.setEnvVar("Category_id", res.body.Categoryid);
+  bru.setEnvVar("category_id", res.body.categoryid);
 }
