@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: https://api.escuelajs.co/api/v1/products/6
+  url: https://api.escuelajs.co/api/v1/products/
   body: none
-  auth: inherit
+  auth: none
+}
+
+script:pre-request {
+  req.setHeader("Authorization", "Bearer {{titleValue}}");
 }

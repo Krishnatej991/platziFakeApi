@@ -6,18 +6,31 @@ meta {
 
 post {
   url: https://api.escuelajs.co/api/v1/products/
-  body: json
+  body: none
   auth: inherit
 }
 
-body:json {
-  {
-    "title": "New Product",
-    "price": 10,
-    "description": "A description",
-    "categoryId": 1,
-    "images": ["https://placehold.co/600x400"]
-  }
+vars:pre-request {
+  title: New Product
+  price: 10
+  description: A description
+  categoryid: 2
+  images: https://placehold.co/600x400
+}
+
+vars:post-response {
+  titleValue: res.body.title
+}
+
+script:pre-request {
+  req.setBody({
+    "title": "{{title}}",
+    "price":"2",
+    "description" : "{{description}}",
+    "categoryId" : "2",
+    "images" :["https://placehold.co/600x400"]
+  });
+  
 }
 
 script:post-response {
